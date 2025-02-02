@@ -1,0 +1,25 @@
+{
+  "name": "malecha-music-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Drouz",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@discordjs/opus": "^0.10.0",
+    "@discordjs/voice": "^0.18.0",
+    "@spotify/web-api-ts-sdk": "^1.2.0",
+    "discord-player": "^7.1.0",
+    "discord.js": "^14.17.3",
+    "dotenv": "^16.4.7",
+    "ffmpeg-static": "^5.2.0",
+    "play-dl": "^1.9.7",
+    "prism-media": "^1.3.5",
+    "ytdl-core": "^4.11.5",
+    "ytdl-core-discord": "^1.3.1"
+  }
+}
