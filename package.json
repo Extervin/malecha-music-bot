@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node --trace-deprecation index.js"
   },
   "keywords": [],
   "author": "Drouz",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@discord-player/extractor": "^7.1.0",
     "@discordjs/opus": "^0.10.0",
     "@discordjs/voice": "^0.18.0",
     "@spotify/web-api-ts-sdk": "^1.2.0",

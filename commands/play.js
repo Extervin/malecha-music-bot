@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { QueryType, useMainPlayer } = require('discord-player');
-const ytdl = require('ytdl-core'); // Получение информации о видео YouTube не работает
+
 const spotify = require('@spotify/web-api-ts-sdk'); // Spotify API
 
 // Если используешь Spotify API, добавь токены в .env
@@ -34,17 +34,7 @@ module.exports = {
 
             let searchType = QueryType.AUTO;
 
-            if (query.includes('youtube.com') || query.includes('youtu.be')) {
-                try {
-                    const videoInfo = await ytdl.getInfo(query);
-                    const videoTitle = videoInfo.videoDetails.title;
-                    console.log(`🎵 YouTube-ссылка, найдено название: ${videoTitle}`);
-                    query = videoTitle; // Меняем ссылку на название
-                } catch (error) {
-                    console.error(`❌ Ошибка при получении названия YouTube-видео: ${error.message}`);
-                    return interaction.followUp('❌ Не удалось обработать YouTube-ссылку.');
-                }
-            } else if (query.includes('spotify.com')) {
+            if (query.includes('spotify.com')) {
                 try {
                     if (!SPOTIFY_CLIENT_ID || !SPOTIFY_CLIENT_SECRET) {
                         console.warn('⚠️ Spotify API не настроен. Используем стандартный поиск.');

@@ -33,7 +33,7 @@ for (const file of eventFiles) {
     client.on(event.name, (...args) => event.execute(...args, client));
 }
 
-const player = new Player(client);
+const player = new Player(client, { ytdlOptions: { filter: "audioonly", quality: 'highestaudio',  highWaterMark: 1 << 25, }, });
 
 (async () => {
     await player.extractors.loadMulti(DefaultExtractors);
